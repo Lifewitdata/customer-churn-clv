@@ -1,0 +1,29 @@
+{
+  "unit_tests": "12 passed",
+  "pipeline": "completed on full cleaned dataset",
+  "saved_model_scoring": "completed for 2011-12-09",
+  "notebooks": {
+    "01_data_quality_and_eda.ipynb": {
+      "executed_code_cells": 4
+    },
+    "02_customer_behaviour_and_targets.ipynb": {
+      "executed_code_cells": 3
+    },
+    "03_churn_model_comparison.ipynb": {
+      "executed_code_cells": 4
+    },
+    "04_customer_value_prediction.ipynb": {
+      "executed_code_cells": 4
+    },
+    "05_time_to_next_purchase.ipynb": {
+      "executed_code_cells": 4
+    },
+    "06_model_evaluation_and_business_actions.ipynb": {
+      "executed_code_cells": 5
+    }
+  },
+  "dashboard_previews": "3 PNGs visually reviewed",
+  "bigquery": "SQL supplied; cloud execution not performed",
+  "docker": "Dockerfile supplied; Docker unavailable",
+  "tableau": "CSV exports and build instructions; native TWBX not created"
+}

@@ -1,0 +1,13 @@
+{
+  "raw_rows": 1067371,
+  "exact_duplicates": 34335,
+  "missing_customer_or_date": 235151,
+  "cancellations_nonpositive": 18460,
+  "administrative_lines": 2848,
+  "partial_final_day": 605,
+  "clean_rows": 775972,
+  "customers": 5851,
+  "invoices": 36553,
+  "observation_end_exclusive": "2011-12-09",
+  "gross_revenue": 16884397.310000002
+}
