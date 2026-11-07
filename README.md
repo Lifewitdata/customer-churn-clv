@@ -246,6 +246,10 @@ The data is historical and comes from one retailer. Missing identities, wholesal
 
 Next steps are to assess probability calibration, investigate spending underprediction and large errors, compare alternative models on additional time-based validation periods, and define acceptance criteria before deployment. Operational work would then add cloud execution, scheduling, monitored data checks and failure alerts. A separate controlled campaign experiment would be needed to measure incremental retention benefit.
 
+## Licence
+
+The project code is licensed under the MIT licence in `LICENSE`. That covers the Python package, SQL, scripts, notebooks and this documentation; it does not license the third-party dataset, which is attributed below.
+
 ## Data attribution
 
 Chen, D. (2012). **Online Retail II**. UCI Machine Learning Repository.  
@@ -253,4 +257,4 @@ Dataset: https://archive.ics.uci.edu/dataset/502/online+retail+ii
 DOI: https://doi.org/10.24432/C5CG6D  
 Dataset licence: **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
 
-Derived analysis retains this attribution. The raw source workbook is downloaded by the ingestion script rather than committed to this repository; a small de-duplicated sample is included under `data/sample/`. The dataset licence is not a separate software licence for this repository.
+Derived analysis retains this attribution. The raw source workbook is downloaded by the ingestion script rather than committed to this repository; `data/sample/transactions_sample.csv` is a small attributed sample with the derived `revenue` column. CC BY 4.0 applies to the dataset only, not to the MIT-licensed code in this repository.
