@@ -7,8 +7,6 @@
 The link opens **Customer Value and Accuracy**. The workbook also contains **Customer Retention Risk** and **Model Reliability**.
 
 > **Project scope:** “Churn” means no qualifying purchase during the next 90 days. “Value” means gross positive product spending over that horizon, not full customer lifetime value, net revenue or profit. This is a historical retail modelling project; the source does not identify loyalty-program members.
->
-> **Repository upload status:** the README is published. The owner is uploading the supporting project files separately. Paths and commands below describe the prepared project package and become usable once those files are present.
 
 ## Business problem
 
@@ -89,7 +87,7 @@ The source manifest records the downloaded workbook hash. Data quality checks an
 | Validation | pytest for data quality, leakage, target windows and scoring checks |
 | Reproducibility | Git, dependency records, Docker recipe and a GitHub Actions test workflow |
 
-Docker and CI configuration are provided in the project package. Their presence alone does not establish successful cloud deployment or a passing remote CI run.
+Docker and CI configuration are included in the repository. Their presence alone does not establish successful cloud deployment or a passing remote CI run.
 
 ## Workflow and architecture
 
@@ -158,7 +156,7 @@ The review priority proxy is:
 
 It combines predicted risk with historical spending. It is **not** expected recoverable revenue, incremental campaign value or an optimal offer decision.
 
-The project package includes `dashboards/Customer_Churn_Value_Analytics.twbx` with its Hyper extract. Earlier images under `dashboards/screenshots/` are Python-generated previews, not screenshots of the current Tableau workbook. Use the Tableau Public link at the top to view the published dashboard.
+The packaged workbook is committed at `dashboards/Customer_Churn_Value_Analytics.twbx`. It contains its own Hyper extract, so it opens in Tableau Desktop without warehouse credentials or local data paths. `dashboards/README.md` documents its contents, limits and rebuild recipe. The images under `dashboards/screenshots/` are Python-generated previews, not screenshots of this workbook. Use the Tableau Public link at the top to view the published dashboard.
 
 ## Project structure
 
@@ -171,15 +169,16 @@ The project package includes `dashboards/Customer_Churn_Value_Analytics.twbx` wi
 | `scripts/execute_notebooks.py` | Notebook execution helper |
 | `notebooks/` | Six analyses covering quality, behaviour, classification, value, survival and evaluation |
 | `tests/` | Quality, leakage, scoring and target-window tests |
+| `data/sample/` | Small attributed transaction sample; raw and processed data is generated locally |
 | `outputs/` | Evaluation records, predictions and Tableau exports |
 | `reports/` | Data dictionary, audits, model card and earlier analysis reports |
-| `dashboards/` | Packaged Tableau workbook and supporting material |
+| `dashboards/` | Packaged Tableau workbook, build recipe and Python-generated previews |
 | `configs/` | Modelling configuration |
 | `.github/workflows/tests.yml` | Automated test workflow definition |
 
 ## Run the project locally
 
-After the supporting files have been uploaded, clone the repository and work from its root folder, which contains `pyproject.toml`.
+Clone the repository and work from its root folder, which contains `pyproject.toml`.
 
 ```powershell
 git clone https://github.com/Lifewitdata/customer-churn-clv.git
@@ -193,7 +192,7 @@ python -m loyalty_ml.pipeline --root .
 
 On macOS/Linux, activate the environment with `source .venv/bin/activate` instead. The package declares Python 3.11+ support; the publication-stage tests passed on Python 3.12. Use the version records associated with the run when reproducing its exact outputs.
 
-The first pipeline execution downloads the UCI workbook and processes both sheets. Later runs reuse cached cleaned transactions. If cleaning rules change, rebuild the processed cache before comparing results. Models and local tracking databases are generated locally and are excluded from the prepared Git upload.
+The first pipeline execution downloads the UCI workbook and processes both sheets. Later runs reuse cached cleaned transactions. If cleaning rules change, rebuild the processed cache before comparing results. Models, processed data and local tracking databases are generated locally and are not committed.
 
 ### Train using the existing BigQuery snapshots
 
@@ -254,4 +253,4 @@ Dataset: https://archive.ics.uci.edu/dataset/502/online+retail+ii
 DOI: https://doi.org/10.24432/C5CG6D  
 Dataset licence: **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
 
-Derived analysis retains this attribution. The raw source workbook is downloaded by the ingestion script rather than stored in the prepared Git upload. The dataset licence is not a separate software licence for this repository.
+Derived analysis retains this attribution. The raw source workbook is downloaded by the ingestion script rather than committed to this repository; a small de-duplicated sample is included under `data/sample/`. The dataset licence is not a separate software licence for this repository.
