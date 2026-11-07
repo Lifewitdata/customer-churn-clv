@@ -1,0 +1,45 @@
+{
+  "churn_model": "logistic_regression",
+  "value_model": "lightgbm_tweedie",
+  "validation_pr_auc": {
+    "logistic_regression": 0.7043713794908235,
+    "lightgbm": 0.70434193654996
+  },
+  "validation_value_mae": {
+    "historical_spending": 457.5173062452972,
+    "tweedie_glm": 436.6466912868831,
+    "lightgbm_tweedie": 407.3343094687269
+  },
+  "test_churn": {
+    "pr_auc": 0.5969053864202215,
+    "roc_auc": 0.7350123643207284,
+    "brier": 0.21560095752146763,
+    "prevalence": 0.3930635838150289,
+    "lift_top_10pct": 1.7266935655128477
+  },
+  "test_value": {
+    "mae": 632.1689339454146,
+    "rmse": 3129.595154663287,
+    "aggregate_bias_pct": -48.79078051023158
+  },
+  "test_value_historical_baseline": {
+    "mae": 631.7958778901735,
+    "rmse": 2655.299811546527,
+    "aggregate_bias_pct": -23.50146999600724
+  },
+  "test_ap_bootstrap_95pct": [
+    0.5652061136337987,
+    0.6343779188101087
+  ],
+  "survival": {
+    "concordance": 0.6716218515655664,
+    "brier_at_90": 0.2219160018878942,
+    "km_brier_at_90": 0.27217429596632164
+  },
+  "split_rows": {
+    "train": 12277,
+    "validation": 2658,
+    "test": 2768
+  },
+  "mlflow_run_id": "41d21a7368be4ce0b1f8ed8e6c6268e9"
+}

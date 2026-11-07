@@ -1,0 +1,6 @@
+task,model,validation_score,metric
+churn,logistic_regression,0.7043713794908235,PR-AUC
+churn,lightgbm,0.7021870731258967,PR-AUC
+spending,historical_spending,457.5173062452972,MAE_GBP
+spending,tweedie_glm,436.646691283545,MAE_GBP
+spending,lightgbm_tweedie,404.70577700470875,MAE_GBP

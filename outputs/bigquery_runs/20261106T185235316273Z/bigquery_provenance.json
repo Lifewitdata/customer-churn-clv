@@ -1,0 +1,23 @@
+{
+  "project": "customer-churn-clv",
+  "dataset": "customer_analytics",
+  "location": "US",
+  "jobs": [
+    {
+      "table": "customer_train_validation",
+      "job_id": "e58d1479-d3c6-421d-ab2c-b0899f94ce33",
+      "bytes_processed": 1895100,
+      "rows": 14935,
+      "sql": "SELECT * FROM `customer-churn-clv.customer_analytics.customer_train_validation` ORDER BY snapshot_date, customer_id"
+    },
+    {
+      "table": "customer_model_dataset_20110901",
+      "job_id": "f56fd58d-f946-4788-b6bb-290794494810",
+      "bytes_processed": 329392,
+      "rows": 2768,
+      "sql": "SELECT * FROM `customer-churn-clv.customer_analytics.customer_model_dataset_20110901` ORDER BY snapshot_date, customer_id"
+    }
+  ],
+  "note": "Models run locally; source tables queried in BigQuery. Test used only after validation selection.",
+  "started_utc": "20261106T185235316273Z"
+}
